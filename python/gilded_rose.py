@@ -12,7 +12,6 @@ class GildedRose(object):
                     item.quality += 2
                 else:
                     item.quality += 1
-
             elif item.name == "Backstage passes to a TAFKAL80ETC concert":
                 if item.sell_in <= 0:
                     item.quality = 0
@@ -22,11 +21,14 @@ class GildedRose(object):
                     item.quality += 2
                 else:
                     item.quality += 1
-            
             elif item.name == "Sulfuras, Hand of Ragnaros":
                 quality = 80
                 continue
-
+            elif item.name == "Conjured":
+                if item.sell_in >= 0:
+                    item.quality -= 2
+                else:
+                    item.quality -= 4
             else:
                 if item.sell_in >= 0:
                     item.quality -= 1
